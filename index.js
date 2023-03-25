@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map( title => {
+    const tepmArr = title.split(" ");
+    tepmArr.forEach( (element, index)  => {
+      if (element.charAt(0) !== element.charAt(0).toUpperCase() )
+        tepmArr[index] = element[0].toUpperCase() + element.substring(1)
+    })
+    return title = tepmArr.join(" ")
+  })
 }
+console.log(titleCased())
